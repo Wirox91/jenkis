@@ -1,0 +1,15 @@
+pipeline{
+  agent any
+  stages  {
+    stage('Unit Test - Backend'){
+      agent{
+        docker  {
+          image 'snake/golang-junit:1.21'
+        }
+      }
+      steps  {
+        sh  'go test -v ./..'
+      }
+    }
+  }
+}
