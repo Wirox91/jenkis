@@ -5,6 +5,7 @@ pipeline{
       agent{
         docker  {
           image 'snake/golang-junit:1.21'
+          reuseNode true
         }
       }
       steps  {
